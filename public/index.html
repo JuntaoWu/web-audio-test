@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="javascripts/shared.js"></script>
+    <script src="javascripts/visualizer.js"></script>
+</head>
+
+<body>
+    <button style="display: block;" id="btnResumeOrPause" disabled="true">Please wait, loading...</button>
+    <button style="display: block;" id="btnFilter" disabled="true">Please wait, loading...</button>
+    <p>
+        <input type="range" min="0" max="1" step="0.01" value="1" oninput="sample.changeFrequency(this);"> Frequency</p>
+    <canvas width="600" height="400"></canvas>
+    <div>This is test.</div>
+    <script>
+        var sample = new Visualizer();
+        document.querySelector('#btnResumeOrPause').addEventListener('click', function () {
+            sample.togglePlayback();
+        });
+
+        document.querySelector('#btnFilter').addEventListener('click', function () {
+            sample.toggleFilter();
+        });
+    </script>
+</body>
+
+</html>
